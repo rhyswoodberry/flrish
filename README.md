@@ -1,26 +1,30 @@
 # flrish
 
+Website URL: 
+
+GitHub Repo:
+
 # Table of Contents
 
 1. [What is flrish?](#what-is-flrish-?)
 
-1. [Problem](#the-problem)
+2. [Problem](#the-problem)
 
-2. [Solution](#the-solution)
+3. [Solution](#the-solution)
 
-3. [User Stories](#user-stories)
+4. [User Stories](#user-stories)
 
-4. [Detailed User Stories](#detailed-user-stories)
+5. [Detailed User Stories](#detailed-user-stories)
 
-5. [Style Guide](#style-guide)
+6. [Style Guide](#style-guide)
 
-6. [Workflow](#workflow)
+7. [Workflow](#workflow)
 
-7. [ERD](#erd)
+8. [ERD](#erd)
 
-8. [Wireframes](#wireframes)
+9. [Wireframes](#wireframes)
 
-9. [Project Management](#project-management)
+10. [Project Management](#project-management)
 
 ---
 
@@ -50,9 +54,9 @@ A marketplace-community that is solely for indie developers or aspiring develope
 
 ## User Stories
 
-![User Stories Part 01](./user-story-01.png)
+![User Stories Part 01](./read_me_images/user-story-01.png)
 
-![User Stories Part 02](./user-story-02.png)
+![User Stories Part 02](./read_me_images/user-story-02.png)
 
 
 ## Detailed User Stories
@@ -165,21 +169,21 @@ A marketplace-community that is solely for indie developers or aspiring develope
 
 **Logo**
 
-![flrish Logo](./flrish-logo.png)
+![flrish Logo](./read_me_images/flrish-logo.png)
 
 **Colour Palette**
 
-![Colour palette](./flrish-colour-palette.png)
+![Colour palette](/read_me_images/flrish-colour-palette.png)
 
 **Fonts**
 
 *Headings font* 
-![Heading font](./flrish-headings.png)
+![Heading font](./read_me_images/flrish-headings.png)
 Oleo Script conveys a fun and energetic style, which fits with the brand of the site.
 
 
 *Main text font*
-![Main font](./flrish-main.png)
+![Main font](./read_me_images/flrish-main.png)
 Nunito Sans is a modern, versitile font with several styles availible. It is easily legible on digital devices.
 
 ___
@@ -188,7 +192,7 @@ ___
 
 A preliminary look at the workflow of my website.
 
-![Workflow Diagram](./flrish-workflow.png)
+![Workflow Diagram](./read_me_images/flrish-workflow.png)
 
 ---
 
@@ -196,7 +200,7 @@ A preliminary look at the workflow of my website.
 
 MVP entity relationship diagram.
 
-![ERD Diagram](./flrish-erd.png)
+![ERD Diagram](./read_me_images/flrish-erd.png)
 
 ---
 
@@ -206,23 +210,23 @@ I used Figma to desgin the wireframes for the website.
 
 **Homepage**
 
-![Homepage](./)
+![Homepage](./read_me_images/)
 
 **Browse Games**
 
-![Browse Games](./)
+![Browse Games](./read_me_images/)
 
 **View Game**
 
-![View Game](./)
+![View Game](./read_me_images/)
 
 **Profile**
 
-![Profile](./)
+![Profile](./read_me_images/)
 
 **Sign In**
 
-![Sign In](./)
+![Sign In](./read_me_images/)
 
 ---
 
@@ -230,6 +234,6 @@ I used Figma to desgin the wireframes for the website.
 
 I used **Trello** to manage my project.
 
-![](./flrish-trello-01.png)
+![Tello board 1](./read_me_images/flrish-trello-01.png)
 
-![](./flrish-trello-02.png)
+![Trello board 2](./read_me_images/flrish-trello-02.png)

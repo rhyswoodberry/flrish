@@ -1,8 +1,8 @@
 # flrish
 
-Website URL: 
+Website URL: https://flrish.herokuapp.com/
 
-GitHub Repo:
+GitHub Repo: https://github.com/rhyswoodberry/flrish
 
 # Table of Contents
 

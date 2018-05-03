@@ -173,7 +173,7 @@ A marketplace-community that is solely for indie developers or aspiring develope
 
 **Colour Palette**
 
-![Colour palette](/read_me_images/flrish-colour-palette.png)
+![Colour palette](./read_me_images/flrish-colour-palette.png)
 
 **Fonts**
 
@@ -208,25 +208,27 @@ MVP entity relationship diagram.
 
 I used Figma to desgin the wireframes for the website.
 
+![Figma](./read_me_images/flrish-figma.png)
+
 **Homepage**
 
-![Homepage](./read_me_images/)
+![Homepage](./read_me_images/flrish-homepage.png)
 
 **Browse Games**
 
-![Browse Games](./read_me_images/)
+![Browse Games](./read_me_images/flrish-browse.png)
 
 **View Game**
 
-![View Game](./read_me_images/)
+![View Game](./read_me_images/flrish-view-game.png)
 
 **Profile**
 
-![Profile](./read_me_images/)
+![Profile](./read_me_images/flrish-profile.png)
 
 **Sign In**
 
-![Sign In](./read_me_images/)
+![Sign In](./read_me_images/flrish-sign-up.png)
 
 ---
 

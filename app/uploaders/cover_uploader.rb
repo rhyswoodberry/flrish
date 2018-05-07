@@ -12,11 +12,11 @@ class CoverUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-
+  # Accepted file extentions
   def extension_whitelist
     %w(jpg jpeg gif png)
   end
-
+  # Accepted file types
   def content_type_whitelist
     /image\//
   end

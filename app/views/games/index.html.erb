@@ -15,6 +15,7 @@
   <tbody>
     <% @games.each do |game| %>
       <tr>
+        <td><%= game.cover %></td>
         <td><%= game.title %></td>
         <td><%= game.description %></td>
         <td><%= game.price %></td>

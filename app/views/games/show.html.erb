@@ -2,7 +2,7 @@
   <p id="notice"><%= notice %></p>
   
   <p>
-    <%= image_tag @game.cover.url %>
+    <%= link_to(image_tag(@game.cover.thumb.url, alt: 'Image'), @game.cover.url, target: '_blank') if @game.cover? %>
   </p>
 
   <p>

@@ -17,7 +17,9 @@
     <tbody>
       <% @games.each do |game| %>
         <tr>
-          <td><%= image_tag game.cover.url %></td>
+          <td>
+            <%= link_to(image_tag(@game.cover.small_thumb.url, alt: 'Image'), @game.cover.url, target: '_blank') if @game.cover? %>
+          </td>
           <td><%= game.title %></td>
           <td><%= game.description %></td>
           <td><%= game.price %></td>

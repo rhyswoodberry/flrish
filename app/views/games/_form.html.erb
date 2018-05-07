@@ -11,7 +11,7 @@
         </ul>
       </div>
     <% end %>
-
+  
     <div class="field">
       <%= form.label :title %>
       <%= form.text_field :title %>
@@ -35,5 +35,8 @@
     <div class="actions">
       <%= form.submit %>
     </div>
+
+    <%= render 'shared/errors', object: game %>
+
   <% end %>
 </div>

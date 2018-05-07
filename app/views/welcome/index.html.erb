@@ -1,52 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>flrish</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="main.js"></script>
-  <style>
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .main-nav {
-    display: flex;
-    justify-content: space-around;
-    background-color: #D11F66;
-    list-style: none;
-  }
-  
-  body {
-    margin: 0;
-  }
-
-  </style>
-</head>
-<body>
-<!-- Section 1: Nav -->
-<nav>
-  <ul class="main-nav">
-    <li>flrish</li>
-    <li><%= link_to "Sign Up", '/users/sign_up' %></li>
-    <li><%= link_to "Sign In", '/users/sign_in' %></li>
-  </ul>
-</nav>
-<br>
-<br>
-<div class='welcome-message'>
-  <p>A marketplace for indie games.</p>
+<div class="all_views">
+  <br><br>
+  <div class='welcome-message'>
+    <p>A marketplace for indie games.</p>
+  </div>
+  <br><br><br>
+  <div class='browse-button'>
+    <p><%= link_to "BROWSE GAMES", '/games' %></p>
+  </div>
 </div>
-<br>
-<br>
-<br>
-<div class='browse-button'>
-  <p><%= link_to "BROWSE GAMES", '/games' %></p>
-</div>
-
-  
-</body>
-</html>

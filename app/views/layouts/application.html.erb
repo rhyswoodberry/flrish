@@ -10,8 +10,20 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <!-- Section 1: Nav -->
+    <nav>
+      <ul class="main-nav">
+        <li><%= link_to "flrish", '/welcome' %></li>
+        <li><%= link_to "Browse", '/games' %></li>
+        <li><%= link_to "Sign Up", '/users/sign_up' %></li>
+        <li><%= link_to "Sign In", '/users/sign_in' %></li>
+        <li><%= link_to "Sign Out", '/users/sign_out' %></li>
+      </ul>
+    </nav>
+    <div class="all_views">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>

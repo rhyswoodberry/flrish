@@ -1,23 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="all_views">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <%= image_tag @game.cover.url %>
-</p>
+  <p>
+    <%= image_tag @game.cover.url %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @game.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @game.title %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @game.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @game.description %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @game.price %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= @game.price %>
+  </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+  <%= link_to 'Edit', edit_game_path(@game) %> |
+  <%= link_to 'Back', games_path %>
+</div>

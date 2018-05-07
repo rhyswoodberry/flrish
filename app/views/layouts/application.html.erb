@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,800" rel="stylesheet">
     <title>flrish</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,7 +14,7 @@
     <!-- Section 1: Nav -->
     <nav>
       <ul class="main-nav">
-        <li><%= link_to "flrish", '/welcome' %></li>
+        <li class="logo"><%= link_to "flrish", '/welcome' %></li>
         <li><%= link_to "Browse", '/games' %></li>
         <li><%= link_to "Sign Up", '/users/sign_up' %></li>
         <li><%= link_to "Sign In", '/users/sign_in' %></li>

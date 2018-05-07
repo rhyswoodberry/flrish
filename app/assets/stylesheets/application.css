@@ -27,10 +27,15 @@
 
 .main-nav li {
   padding: 3%;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #fdfdfd;
 }
 
 body {
   margin: 0;
+  background-color: #171616;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #fdfdfd;
 }
 
 .all_views {

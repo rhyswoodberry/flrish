@@ -24,14 +24,17 @@
           <td><%= game.description %></td>
           <td><%= game.price %></td>
           <td><%= link_to 'Show', game %></td>
-          <td><%= link_to 'Edit', edit_game_path(game) %></td>
-          <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% if can? :manage, Game %>
+            <td><%=link_to 'Edit', edit_game_path(game) %></td>
+            <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
 
   <br>
-
+  <% if can :manage, Game %>
   <%= link_to 'New Game', new_game_path %>
+  <% end %>
 </div>

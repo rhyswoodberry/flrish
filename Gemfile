@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-# User Authentication and Authorisation
+# User Authentication
 gem 'devise'
 # ENV
 gem "figaro"
@@ -38,6 +38,8 @@ gem 'carrierwave', '~> 1.0'
 gem 'file_validators'
 # Image Manipulations
 gem 'mini_magick'
+# User Authorization
+gem 'cancancan', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

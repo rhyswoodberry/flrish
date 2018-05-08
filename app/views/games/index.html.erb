@@ -34,7 +34,7 @@
   </table>
 
   <br>
-  <% if can :manage, Game %>
+  <% if can? :manage, Game %>
   <%= link_to 'New Game', new_game_path %>
   <% end %>
 </div>

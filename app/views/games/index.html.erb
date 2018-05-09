@@ -3,8 +3,17 @@
 
   <h1>Games</h1>
 
+  <%= search_form_for @q do |f| %>
+  <%= f.label :title_cont %>
+  <%= f.search_field :title_cont %>
+  <%= f.submit %>
+  <% end %>
+
   <table>
     <thead>
+      <tr>
+        <th><%= sort_link(@q, :title) %></th>
+      </tr>
       <tr>
         <th>Image</th>
         <th>Title</th>

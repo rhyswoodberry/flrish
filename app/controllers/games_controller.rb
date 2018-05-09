@@ -7,7 +7,7 @@ class GamesController < ApplicationController
   def index
     @games = Game.all
     @q = Game.ransack(params[:q])
-    @searched_games = @q.result(distinct: true)
+    @games = @q.result(distinct: true)
   end
 
   # GET /games/1

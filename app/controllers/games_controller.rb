@@ -31,6 +31,7 @@ class GamesController < ApplicationController
       if @game.save
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
+        UserNotifierMailer.send_signup_email(@user).deliver
       else
         format.html { render :new }
         format.json { render json: @game.errors, status: :unprocessable_entity }

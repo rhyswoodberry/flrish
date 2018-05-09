@@ -38,11 +38,11 @@ class CoverUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fill: [50, 100]
+    process resize_to_fill: [75, 100]
   end
 
   version :large do
-    process resize_to_fill: [250, 350]
+    process resize_to_fill: [275, 350]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :games
+  resources :charges
 
   get '/welcome', to: 'welcome#index'
 

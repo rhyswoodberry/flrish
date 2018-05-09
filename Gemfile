@@ -40,6 +40,8 @@ gem 'file_validators'
 gem 'mini_magick'
 # User Authorization
 gem 'cancancan', '~> 2.0'
+# Enable Carrierwave to communicate with AWS
+gem "fog-aws"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

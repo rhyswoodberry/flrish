@@ -24,7 +24,7 @@
           <td><%= game.description %></td>
           <td><%= game.price %></td>
           <td><%= link_to 'Show', game %></td>
-          <% if can? :manage, Game %>
+          <% if game.user_id == current_user.try(:id) %>
             <td><%=link_to 'Edit', edit_game_path(game) %></td>
             <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>

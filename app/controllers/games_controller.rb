@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_game, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   # GET /games
   # GET /games.json
@@ -65,6 +66,10 @@ class GamesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_game
       @game = Game.find(params[:id])
+    end
+
+    def authorize_game
+      raise CanCan::AccessDenied, 'This material has not been released to you' unless @game.user_id == current_user.id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

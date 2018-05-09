@@ -5,6 +5,6 @@ class UserNotifierMailer < ApplicationMailer
   def send_new_game_email(user)
     @user = user
     mail( :to => @user.email,
-    :subject => 'You uploaded a game!' )
+    :subject => 'Success! You uploaded a game!' )
   end
 end

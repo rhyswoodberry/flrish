@@ -27,11 +27,12 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     @game.user_id = current_user.id
+    @current_user_game = current_user
     respond_to do |format|
       if @game.save
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
-        UserNotifierMailer.send_signup_email(@user).deliver
+        UserNotifierMailer.send_new_game_email(@current_user_game).deliver
       else
         format.html { render :new }
         format.json { render json: @game.errors, status: :unprocessable_entity }

@@ -22,24 +22,31 @@
 
 .nav-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
   width: 100%;
   background-color: #d11f66;
   list-style: none;
-  padding: 1.5%;
+  padding: 2%;
   margin: auto;
 }
 
-.nav-container > li {
-  flex: 1;
+.nav-container li {
+  cursor: pointer;
 }
 
-
-.logo {
-  font-family: 'Oleo Script', sans-serif;
+.nav-container a {
+  text-decoration: none;
   color: #171616;
-  font-size: 250%;
+}
+
+.nav-container a:hover {
+  color: #fdfdfd;
+}
+
+.logo  {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Oleo Script', sans-serif;
+  font-size: 350%;
 }
 
 body {

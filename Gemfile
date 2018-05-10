@@ -48,6 +48,10 @@ gem 'sendgrid-ruby'
 gem 'stripe'
 # Ransack Search Functionality
 gem 'ransack', github: 'activerecord-hackery/ransack'
+# Bootstrap
+gem 'bootstrap', '~> 4.0.0'
+# jquery rails
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

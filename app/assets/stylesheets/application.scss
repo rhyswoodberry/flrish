@@ -106,12 +106,25 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .browse-button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  background-color: #d11f66;
+}
+
+.browse-button a {
+    text-decoration: none;
+    color: #171616;
+    font-family: 'Oleo Script', sans-serif;
+}
+
+.browse-button a:hover {
+  color: #fdfdfd;
 }
 
 /* WELCOME @MEDIA */

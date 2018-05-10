@@ -1,6 +1,6 @@
 <div class="container">
-  <div class='welcome'><h1>WELCOME TO</h1></div>
 
+  <div class='welcome'><h1>WELCOME TO</h1></div>
 
   <div class="row">
     <div class="col-md-12 home-logo">
@@ -10,14 +10,25 @@
 
   <div class="row">
     <div class="col-md-12 welcome-message">
-      <span>A marketplace for indie games.</span>
+      <h2> About Us </h2>
+
+      <p>Flrish is a marketplace for people who are passionate 
+      about making games, and playing games. It is a place where 
+      up and coming developers can get thier foot in the door and 
+      sell their games to a dedicated audience. Currently, there 
+      are several features in the works to make your experience here
+      on flrish, even better! Stay tuned, and game on.</p>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-12 browse-button">
-      <p><%= link_to('Browse Games', games_path) %></p>
+    <div class="col-md-12">
+      <button type="button"  class="btn btn-secondary btn-lg btn-block browse-button">
+        <%= link_to('Browse Games', games_path) %>
+      </button>
     </div>
   </div>
+  
+  <br><br>
 
 </div>

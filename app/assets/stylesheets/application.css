@@ -13,22 +13,33 @@
  *= require_tree .
  *= require_self
  */
- * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
 .nav-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100%;
   background-color: #d11f66;
-
+  list-style: none;
+  padding: 1.5%;
+  margin: auto;
 }
 
 .nav-container > li {
   flex: 1;
-  flex-basis: 50%;
+}
+
+
+.logo {
+  font-family: 'Oleo Script', sans-serif;
+  color: #171616;
+  font-size: 250%;
 }
 
 body {

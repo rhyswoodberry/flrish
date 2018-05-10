@@ -20,22 +20,14 @@
 
   <body>
     <!-- Section 1: Nav -->
-    <nav>
-      <ul class="nav-container">
-        <li class="logo"><%= link_to('flrish', welcome_path) %></li>
-        <% if user_signed_in? %>
-          <li><%= link_to('Logout', destroy_user_session_path) %></li>
-        <% else %>
-          <li><%= link_to('Sign Up', new_user_registration_path) %></li>
-          <li><%= link_to('Login', new_user_session_path)  %></li>
-        <% end %>
-      </ul>
-    </nav>
+    <%= render 'shared/navbar' %>
 
     <div class="all_views">
+    
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
+      
     </div>
   </body>
 </html>

@@ -142,9 +142,28 @@
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 800;
   text-align: center;
+  padding-bottom: 5%;
 }
 
+.all-games-link a {
+  color: #f5f5f5;
+  text-decoration: none;
+  padding-right: 10px;
 
+}
+
+.all-games-link a:hover {
+  color: #d11f66;
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BODY */
 
 body {
   margin: 0;

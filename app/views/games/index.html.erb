@@ -7,9 +7,9 @@
 </div>
 
 <div class='row'>
-  <div class='col-md-5 search-bar'>
+  <div class='col-md-12 search-bar'>
+    <span class='all-games-link'> <%= link_to('View All Games', games_path) %> </span>
     <%= search_form_for @q do |f| %>
-    <%= f.label :search_for_game %>
     <%= f.search_field :title_cont %>
     <%= f.submit %>
     <% end %>
@@ -17,8 +17,8 @@
 </div>
 
 <div class='row'>
-  <div class='col-md-3 title-filter'>
-    <span><%= link_to('Browse All Games', games_path) %></span>
+  <div class='col-md-3 all-games-link'>
+    
   </div>
 </div>
 
@@ -26,7 +26,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col"><%= sort_link(@q, :title) %></th>
+      <th scope="col" class='sort-filter'><%= sort_link(@q, :title) %></th>
     </tr>
     <tr>
       <th scope="col"></th>

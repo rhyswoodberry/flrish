@@ -18,17 +18,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-.main-nav {
+
+.nav-container {
   display: flex;
-  justify-content: flex-end;
-  background-color: #D11F66;
-  list-style: none;
+  flex-wrap: wrap;
+  background-color: #d11f66;
+
 }
 
-.main-nav li {
-  padding: 2%;
-  font-family: 'Nunito Sans', sans-serif;
-  color: #fdfdfd;
+.nav-container > li {
+  flex: 1;
+  flex-basis: 50%;
 }
 
 body {

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_05_08_054654) do
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    # If there are problems, maybe create a migration to update price
     t.decimal "price", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -23,16 +23,12 @@
   </head>
 
   <body>
-    <!-- Section 1: Nav -->
-    <%= render 'shared/navbar' %>
 
-    <div class="all_views">
-    
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-      
-    </div>
+    <%= render 'shared/navbar' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+
   </body>
 
   <footer>

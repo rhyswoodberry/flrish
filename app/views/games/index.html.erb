@@ -1,52 +1,67 @@
-<div class="all_views">
-  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-  <h1>Games</h1>
+<div class='row'>
+  <div class='col-md-12 games-index'>
+    <h1>Game Marketplace</h1>
+  </div>
+</div>
 
-  <%= search_form_for @q do |f| %>
-  <%= f.label :search_for_game %>
-  <%= f.search_field :title_cont %>
-  <%= f.submit %>
-  <% end %>
+<div class='row'>
+  <div class='col-md-5 search-bar'>
+    <%= search_form_for @q do |f| %>
+    <%= f.label :search_for_game %>
+    <%= f.search_field :title_cont %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</div>
 
-  <span><%= link_to('Browse All Games', games_path) %></span>
+<div class='row'>
+  <div class='col-md-3 title-filter'>
+    <span><%= link_to('Browse All Games', games_path) %></span>
+  </div>
+</div>
 
-  <table>
-    <thead>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><%= sort_link(@q, :title) %></th>
+    </tr>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Game</th>
+      <th scope="col"></th>
+      <th scope="col">Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
       <tr>
-        <th><%= sort_link(@q, :title) %></th>
+        <td>
+          <%= image_tag game.cover.thumb.url%>
+        </td>
+        <td><%= game.title %></td>
+        <td><%= game.description %></td>
+        <td><%= game.price %></td>
+        <td><%= link_to 'Show', game %></td>
+        <% if game.user_id == current_user.try(:id) %>
+          <td><%=link_to 'Edit', edit_game_path(game) %></td>
+          <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
-      <tr>
-        <th></th>
-        <th>Game</th>
-        <th></th>
-        <th>Price</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+    <% end %>
+  </tbody>
+</table>
 
-    <tbody>
-      <% @games.each do |game| %>
-        <tr>
-          <td>
-            <%= image_tag game.cover.thumb.url%>
-          </td>
-          <td><%= game.title %></td>
-          <td><%= game.description %></td>
-          <td><%= game.price %></td>
-          <td><%= link_to 'Show', game %></td>
-          <% if game.user_id == current_user.try(:id) %>
-            <td><%=link_to 'Edit', edit_game_path(game) %></td>
-            <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
+<br>
+
+<div class="row">
+  <div class="col-md-12">
+      <% if can? :manage, Game %>
+        <%= link_to("<button class='btn btn-secondary btn-lg new-game'>Upload A New Game</button>".html_safe, new_game_path) %>
       <% end %>
-    </tbody>
-  </table>
-
-  <br>
-
-  <% if can? :manage, Game %>
-    <%= link_to 'New Game', new_game_path %>
-  <% end %>
+  </div>
 </div>

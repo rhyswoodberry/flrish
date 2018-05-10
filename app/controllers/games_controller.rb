@@ -73,7 +73,7 @@ class GamesController < ApplicationController
     end
 
     def authorize_game
-      raise CanCan::AccessDenied, 'This material has not been released to you' unless @game.user_id == current_user.id
+      raise CanCan::AccessDenied, 'This is not your game!' unless @game.user_id == current_user.id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

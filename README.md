@@ -26,6 +26,10 @@ GitHub Repo: https://github.com/rhyswoodberry/flrish
 
 10. [Project Management](#project-management)
 
+11. [How to use](#how-to-use)
+
+12. [Future Developments](#future)
+
 ---
 
 ## What is *flrish*?
@@ -239,3 +243,14 @@ I used **Trello** to manage my project.
 ![Tello board 1](./read_me_images/flrish-trello-01.png)
 
 ![Trello board 2](./read_me_images/flrish-trello-02.png)
+
+
+## How to use
+
+All you need to do to get started is sign up with a valid email, or you wont recieve emails confirming particular actions.
+Just click sign up and you're ready to get started buying and selling!
+
+## Future
+
+In the coming future I want to add profiles for every user, a reviews system for games,
+and a messaging feature for communication between members of the site.

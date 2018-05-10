@@ -27,7 +27,7 @@
 .nav-container {
   display: flex;
   justify-content: flex-end;
-  align-items: baseline;
+  align-items: center;
   list-style: none;
   width: 100%;
   background-color: #d11f66;

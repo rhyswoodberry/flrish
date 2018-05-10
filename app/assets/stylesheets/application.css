@@ -13,24 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+ /* GLOBAL */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  body {
+    margin: 0;
+    background-color: #171616;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #fdfdfd;
+  }
+  
+  .all_views {
+    padding: 2%;
+  }
 }
 
+/* NAV BAR */
 
 .nav-container {
   display: flex;
+  justify-content: flex-end;
+  list-style: none;
   width: 100%;
   background-color: #d11f66;
-  list-style: none;
+  height: 5rem;
   padding: 2%;
-  margin: auto;
 }
 
-.nav-container li {
-  cursor: pointer;
+.nav_container li {
+  flex: 1;
+}
+
+.nav-container li:not(.logo) {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
 }
 
 .nav-container a {
@@ -43,19 +64,31 @@
 }
 
 .logo  {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 50%;
   font-family: 'Oleo Script', sans-serif;
   font-size: 350%;
 }
 
-body {
-  margin: 0;
-  background-color: #171616;
-  font-family: 'Nunito Sans', sans-serif;
-  color: #fdfdfd;
+.nav_out, .nav_up, .nav_in {
+  margin-left: 3%;
 }
 
-.all_views {
-  padding: 2%;
+/* NAV BAR @MEDIA */
+
+@media all and (max-width: 600px) {
+  .main-nav {
+    flex-wrap: wrap;
+  }
+  .main-nav > li {
+    flex-basis: 50%;
+    padding: 1%;
+  }
 }
+
+@media all and (max-width: 425px) {
+  .main-nav > li {
+    flex-basis: 100%;
+    padding: 2%;
+  }
+}
+

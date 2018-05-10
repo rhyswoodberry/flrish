@@ -9,6 +9,9 @@ class ChargesController < ApplicationController
     # Amount in cents
     @amount = @game.price * 100
     @amount = @amount.to_i
+    
+    @user = current_user
+    UserNotifierMailer.send_new_purchase_email(@user).deliver
   
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],

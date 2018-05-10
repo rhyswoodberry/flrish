@@ -20,17 +20,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  body {
-    margin: 0;
-    background-color: #171616;
-    font-family: 'Nunito Sans', sans-serif;
-    color: #fdfdfd;
-  }
-  
-  .all_views {
-    padding: 2%;
-  }
 }
 
 /* NAV BAR */
@@ -92,3 +81,17 @@
   }
 }
 
+/* WELCOME PAGE */
+
+
+
+body {
+  margin: 0;
+  background-color: #171616;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #fdfdfd;
+}
+
+.all_views {
+  padding: 2%;
+}

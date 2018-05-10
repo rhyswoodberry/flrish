@@ -85,31 +85,32 @@
 
 /* WELCOME PAGE */
 
-.welcome-container {
-
+.welcome {
+  text-align: center;
 }
 
-.welcome {
-  
+.home-logo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .home-logo img {
-  height: 40%;
-  width: 40%;
-  
+  width: 200px;
+  height: 200px;
 }
 
 .welcome-message {
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .browse-button {
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
-/* WELCOME @MEDIA */
-
-
 
 body {
   margin: 0;

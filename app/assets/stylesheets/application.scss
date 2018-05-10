@@ -114,11 +114,31 @@
   justify-content: center;
 }
 
-/*  */
+/* WELCOME @MEDIA */
+
+@media screen and (max-width: 500px) {
+  .home-logo img {
+    width: 300px;
+    height: 300px;
+  }
+}
 
 body {
   margin: 0;
   background-color: #171616;
   font-family: 'Nunito Sans', sans-serif;
   color: #fdfdfd;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #d11f66;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #171616;
+}
+
+footer > div {
+  flex: 1;
 }

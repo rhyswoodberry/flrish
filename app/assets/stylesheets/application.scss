@@ -173,6 +173,10 @@
   padding: 10px;
 }
 
+.sort-title {
+  padding-right: 10px;
+}
+
 .sort-filter a {
   color: #f5f5f5;
   text-decoration: none;
@@ -242,5 +246,6 @@ footer a {
 }
 
 footer a:hover {
+  text-decoration: none;
   color: #d11f66;
 }

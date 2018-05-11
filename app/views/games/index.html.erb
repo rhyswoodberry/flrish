@@ -53,7 +53,7 @@
 <br>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12 upload-button">
       <% if can? :manage, Game %>
         <%= link_to("<button class='btn btn-secondary btn-lg new-game'>Upload A New Game</button>".html_safe, new_game_path) %>
       <% end %>

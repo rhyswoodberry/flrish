@@ -51,7 +51,7 @@
 }
 
 .nav-container a:hover {
-  color: #fdfdfd;
+  color: #f5f5f5;
 }
 
 .logo  {
@@ -107,6 +107,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 25px;
 }
 
 .browse-button {
@@ -115,7 +116,10 @@
   justify-content: center;
   align-items: center;
   background-color: #d11f66;
+  border: none;
 }
+
+/* LEARN HOW TO OVERRIDE BOOTSTRAP BUTTON HOVER/ACTIVE STYLE */
 
 .browse-button a {
     text-decoration: none;
@@ -124,7 +128,7 @@
 }
 
 .browse-button a:hover {
-  color: #fdfdfd;
+  color: #f5f5f5;
 }
 
 /* WELCOME @MEDIA */
@@ -165,6 +169,10 @@
   padding-bottom: 50px;
 }
 
+.search-divider {
+  padding: 10px;
+}
+
 .sort-filter a {
   color: #f5f5f5;
   text-decoration: none;
@@ -181,6 +189,26 @@
   justify-content: center;
   align-items: center;
   background-color: #312f2f;
+  padding-top: 25px;
+}
+
+.index-title a {
+  font-weight: 800;
+  color: #d11f66;
+  text-decoration: none;
+}
+
+.index-title a:hover {
+  color: #f5f5f5;
+}
+
+.index-price-label {
+  font-weight: 800;
+  color: #f5f5f5
+}
+
+.index-price {
+  color: #d11f66;
 }
 
 /* BODY */
@@ -189,7 +217,7 @@ body {
   margin: 0;
   background-color: #171616;
   font-family: 'Nunito Sans', sans-serif;
-  color: #fdfdfd;
+  color: #f5f5f5;
 }
 
 /* FOOTER */
@@ -201,6 +229,7 @@ footer {
   background-color: #312f2f;
   font-family: 'Nunito Sans', sans-serif;
   color: #f5f5f5;
+  padding: 10px;
 }
 
 footer > div {

@@ -9,6 +9,7 @@
 <div class='row'>
   <div class='col-md-12 search-bar'>
     <span class='sort-filter'><%= sort_link(@q, :title) %></span>
+    <span class='search-divider'> | </span>
     <span class='all-games-link'> <%= link_to('View All Games', games_path) %> </span>
     <%= search_form_for @q do |f| %>
     <%= f.search_field :title_cont %>
@@ -29,17 +30,16 @@
       <th colspan="3"></th>
     </tr> -->
   </thead>
-
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <td>
+        <td class='index-cover'>
           <%= image_tag game.cover.thumb.url%>
         </td>
-        <td><%= game.title %></td>
+        <td class='index-title'><%= link_to game.title, game %></td>
         <td><%= game.description %></td>
-        <td><%= game.price %></td>
-        <td><%= link_to 'Show', game %></td>
+        <td class='index-price-label'>Price </td>
+        <td class='index-price'> <%= game.price %></td>
         <% if game.user_id == current_user.try(:id) %>
           <td><%=link_to 'Edit', edit_game_path(game) %></td>
           <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>

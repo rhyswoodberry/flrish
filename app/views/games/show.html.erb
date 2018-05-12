@@ -1,4 +1,4 @@
-<div class="all_views">
+<div>
   <p id="notice"><%= notice %></p>
   
   <p>
@@ -29,8 +29,13 @@
       <span><strong>Price: </strong><%= @game.price %></span>
     </label>
   </article>
-  <!-- Make this so it is only visable for users who do not own the item being sold -->
-  <% if can? :manage, Game %>
+
+  <!-- This ensures that users cannot buy their own games -->
+  <% game = @game.user_id %>
+  <% user = current_user.id %>
+
+  <% unless game == user %>
+<!-- This is the stripe payment button -->
     <%= hidden_field_tag "game_id", "#{@game.id}" %>
     <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js',
       class: 'stripe-button',
@@ -41,12 +46,10 @@
       description: @game.title,
       image: "https://github.com/rhyswoodberry/flrish/blob/master/read_me_images/flrish-logo.png?raw=true",
       locale: "auto",
-      currency: "aud"
-      }%>
+      currency: "aud"} %>
     <% end %>
   <% end %>
 
-  </p>
   <% if @game.user_id == current_user.try(:id)  %>
   <%= link_to 'Edit', edit_game_path(@game) %> |
   <% end %>

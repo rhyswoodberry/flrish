@@ -15,41 +15,43 @@
     <%= @game.description %>
   </p>
 
-  <p>
-  <% @amount = @game.price * 100 %>
-  <%= form_tag charges_path do %>
-  
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
+<!-- Stripe payments -->
+  <div class='stripe-payments'>
+    <% @amount = @game.price * 100 %>
+    <%= form_tag charges_path do %>
+    
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="price">
+        <span><strong>Price: </strong><%= @game.price %></span>
+      </label>
+    </article>
+
+    <!-- This ensures that users cannot buy their own games -->
+    <% game = @game.user_id %>
+    <% user = current_user.id %>
+
+    <% unless game == user %>
+  <!-- This is the stripe payment button -->
+      <%= hidden_field_tag "game_id", "#{@game.id}" %>
+      <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js',
+        class: 'stripe-button',
+        data: {
+        key: ENV["STRIPE_PUBLISHABLE_KEY"],
+        amount: @amount,
+        name: "flrish",
+        description: @game.title,
+        image: "https://github.com/rhyswoodberry/flrish/blob/master/read_me_images/flrish-logo.png?raw=true",
+        locale: "auto",
+        currency: "aud"} %>
+      <% end %>
     <% end %>
-    <label class="price">
-      <span><strong>Price: </strong><%= @game.price %></span>
-    </label>
-  </article>
-
-  <!-- This ensures that users cannot buy their own games -->
-  <% game = @game.user_id %>
-  <% user = current_user.id %>
-
-  <% unless game == user %>
-<!-- This is the stripe payment button -->
-    <%= hidden_field_tag "game_id", "#{@game.id}" %>
-    <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js',
-      class: 'stripe-button',
-      data: {
-      key: ENV["STRIPE_PUBLISHABLE_KEY"],
-      amount: @amount,
-      name: "flrish",
-      description: @game.title,
-      image: "https://github.com/rhyswoodberry/flrish/blob/master/read_me_images/flrish-logo.png?raw=true",
-      locale: "auto",
-      currency: "aud"} %>
-    <% end %>
-  <% end %>
-
+  </div>
+  <!-- Only owners of games can edit games, this hides the button for non-sellers -->
   <% if @game.user_id == current_user.try(:id)  %>
   <%= link_to 'Edit', edit_game_path(@game) %> |
   <% end %>

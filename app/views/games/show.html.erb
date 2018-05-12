@@ -29,7 +29,7 @@
       <span><strong>Price: </strong><%= @game.price %></span>
     </label>
   </article>
-
+  <!-- Make this so it is only visable for users who do not own the item being sold -->
   <% if can? :manage, Game %>
     <%= hidden_field_tag "game_id", "#{@game.id}" %>
     <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js',

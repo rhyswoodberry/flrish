@@ -22,14 +22,14 @@
 
 <table class="table game-listings">
   <thead>
-    <!-- Figure out what to do with these?
+    <!-- Figure out what to do with these? -->
     <tr>
       <th scope="col">Cover</th>
       <th scope="col">Game</th>
       <th scope="col">Decription</th>
       <th scope="col">Price</th>
       <th colspan="3"></th>
-    </tr> -->
+    </tr>
   </thead>
   <tbody>
     <% @games.each do |game| %>
@@ -41,6 +41,8 @@
         <td><%= game.description %></td>
         <td class='index-price-label'>Price </td>
         <td class='index-price'> <%= game.price %></td>
+
+        <!-- Only show users edit link for their own games -->
         <% if game.user_id == current_user.try(:id) %>
           <td><%=link_to 'Edit', edit_game_path(game) %></td>
           <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>

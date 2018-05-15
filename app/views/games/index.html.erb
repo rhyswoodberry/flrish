@@ -6,6 +6,7 @@
   </div>
 </div>
 
+<!-- Search Bar -->
 <div class='row'>
   <div class='col-md-12 search-bar'>
     <span class='sort-title'>Sort by:</span>
@@ -18,6 +19,8 @@
     <% end %>
   </div>
 </div>
+
+<!-- Game Listings Cards -->
 
 
 <table class="table game-listings">
@@ -42,7 +45,7 @@
         <td class='index-price-label'>Price </td>
         <td class='index-price'> <%= game.price %></td>
 
-        <!-- Only show users edit link for their own games -->
+        <!-- This only shows users edit link for their own games -->
         <% if game.user_id == current_user.try(:id) %>
           <td><%=link_to 'Edit', edit_game_path(game) %></td>
           <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>

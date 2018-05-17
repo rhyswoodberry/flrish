@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <div class='row'>
-  <div class='col-md-12 games-index'>
-    <h1>Game Marketplace</h1>
+  <div class='col-md-6 games-index-title'>
+    <h1>The Marketplace</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 upload-button">
+      <% if can? :manage, Game %>
+        <%= link_to("<button class='btn btn-secondary btn-lg new-game'>Upload A New Game</button>".html_safe, new_game_path) %>
+      <% end %>
   </div>
 </div>
 
 <!-- Search Bar -->
 <div class='row'>
-  <div class='col-md-12 search-bar'>
+  <div class='col-md-6 search-bar'>
     <span class='sort-title'>Sort by:</span>
     <span class='sort-filter'><%= sort_link(@q, :title) %></span>
     <span class='search-divider'> | </span>
@@ -21,70 +29,26 @@
 </div>
 
 <!-- Game Listings Cards -->
-<% @games.each do |game| %>
 <div class="row">
-  <div class="col-md-12">
-    <div class="card games-index">
-      <div class="card-img-top index-cover">
-        <%= image_tag game.cover.thumb.url%>
-      </div>
-      <div class="card-body">
-        <h4 class="card-title index-title">
-          <%= link_to game.title, game %>
-        </h4>
-        <h5 class="card-subtitle mb-2 text-muted index-price">
-          Price: <%= game.price %>
-        </h5>
-        <% if game.user_id == current_user.try(:id) %>
-          <p class="card-edit"><%=link_to 'Edit', edit_game_path(game) %></p>
-          <p class="card-destroy"><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        <% end %>
-      </div>
-    </div>  
-  </div>
-</div>
-<% end %>
-
-  </div>
-
-<!-- Games Index Table -->
-<table class="table game-listings">
-  <thead>
-    <tr>
-      <th scope="col">Cover</th>
-      <th scope="col">Game</th>
-      <th scope="col">Decription</th>
-      <th scope="col">Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td class='index-cover'>
+  <% @games.each do |game| %>
+    <div class="col-md-4">    
+      <div class="card games-index">
+        <div class="card-img-top index-cover">
           <%= image_tag game.cover.thumb.url%>
-        </td>
-        <td class='index-title'><%= link_to game.title, game %></td>
-        <td><%= game.description %></td>
-        <td class='index-price-label'>Price </td>
-        <td class='index-price'> <%= game.price %></td>
-
-        <!-- This only shows users edit link for their own games -->
-        <% if game.user_id == current_user.try(:id) %>
-          <td><%=link_to 'Edit', edit_game_path(game) %></td>
-          <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<div class="row">
-  <div class="col-md-12 upload-button">
-      <% if can? :manage, Game %>
-        <%= link_to("<button class='btn btn-secondary btn-lg new-game'>Upload A New Game</button>".html_safe, new_game_path) %>
-      <% end %>
-  </div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title index-title">
+            <%= link_to game.title, game %>
+          </h2>
+          <div class="card-subtitle mb-2 index-price">
+            <span class="index-price-label">Price:</span> <h4>$<%= game.price %></h4>
+            <% if game.user_id == current_user.try(:id) %>
+              <span class="card-edit"><%=link_to 'Edit', edit_game_path(game) %> | </span>
+              <span class="card-destroy"><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>  
+    </div>
+  <% end %>
 </div>

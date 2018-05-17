@@ -27,14 +27,13 @@
         </div>
       <% end %>
       <label class="price">
-        <span><strong>Price: </strong><%= @game.price %></span>
+        <span><strong>Price: </strong>$<%= @game.price %></span>
       </label>
     </article>
 
-    <!-- This ensures that users cannot buy their own games -->
+  <!-- This ensures that users cannot buy their own games -->
     <% game = @game.user_id %>
     <% user = current_user.id %>
-
     <% unless game == user %>
   <!-- This is the stripe payment button -->
       <%= hidden_field_tag "game_id", "#{@game.id}" %>

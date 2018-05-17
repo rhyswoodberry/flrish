@@ -151,17 +151,31 @@
 
 /* GAMES INDEX */
 
+.games-index-title a {
+  font-weight: 800;
+  color: #d11f66;
+  text-decoration: none;
+}
+
+.index-title a:hover {
+  color: #f5f5f5;
+}
+
+.index-price-label {
+  font-weight: 800;
+  color: #f5f5f5
+}
+
+.index-price {
+  color: #f5f5f5;
+}
+
 .index-row {
   display: flex;
   justify-content: center;
 }
 
 .card {
-  // display: flex;
-  // flex-wrap: wrap;
-  // flex-direction: column;
-  // justify-content: flex-start;
-  // align-items: center;
   background-color: #312f2f;
   width: 17rem;
   height: 20rem;
@@ -192,24 +206,6 @@
   padding-bottom: 3%;
 }
 
-.games-index-title a {
-  font-weight: 800;
-  color: #d11f66;
-  text-decoration: none;
-}
-
-.index-title a:hover {
-  color: #f5f5f5;
-}
-
-.index-price-label {
-  font-weight: 800;
-  color: #f5f5f5
-}
-
-.index-price {
-  color: #f5f5f5;
-}
 
 /* Search Bar Area */
 

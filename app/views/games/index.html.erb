@@ -22,22 +22,30 @@
 
 <!-- Game Listings Cards -->
 <% @games.each do |game| %>
-
-<div class="card games-index" style="width: 18rem;">
-  <div class="card-img-top index-cover">
-    <%= image_tag game.cover.thumb.url%>
-  </div>
-  <div class="card-body">
-    <h4 class="card-title index-title">
-      <%= link_to game.title, game %>
-    </h4>
-    <h5 class="card-subtitle mb-2 text-muted index-price">
-    Price: <%= game.price %>
-    </h5>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card games-index">
+      <div class="card-img-top index-cover">
+        <%= image_tag game.cover.thumb.url%>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title index-title">
+          <%= link_to game.title, game %>
+        </h4>
+        <h5 class="card-subtitle mb-2 text-muted index-price">
+          Price: <%= game.price %>
+        </h5>
+        <% if game.user_id == current_user.try(:id) %>
+          <p class="card-edit"><%=link_to 'Edit', edit_game_path(game) %></p>
+          <p class="card-destroy"><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <% end %>
+      </div>
+    </div>  
   </div>
 </div>
-
 <% end %>
+
+  </div>
 
 <!-- Games Index Table -->
 <table class="table game-listings">

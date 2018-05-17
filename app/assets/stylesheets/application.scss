@@ -147,6 +147,15 @@
 
 /* GAMES INDEX */
 
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #312f2f;
+  width: 15rem;
+}
+
 .games-index {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 800;

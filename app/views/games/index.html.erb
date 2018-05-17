@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<div class='row'>
+<div class='row index-row'>
   <div class='col-md-6 games-index-title'>
     <h1>The Marketplace</h1>
   </div>
 </div>
 
-<div class="row">
+<div class="row index-row">
   <div class="col-md-6 upload-button">
       <% if can? :manage, Game %>
         <%= link_to("<button class='btn btn-secondary btn-lg new-game'>Upload A New Game</button>".html_safe, new_game_path) %>
@@ -15,7 +15,7 @@
 </div>
 
 <!-- Search Bar -->
-<div class='row'>
+<div class='row index-row'>
   <div class='col-md-6 search-bar'>
     <span class='sort-title'>Sort by:</span>
     <span class='sort-filter'><%= sort_link(@q, :title) %></span>
@@ -29,9 +29,9 @@
 </div>
 
 <!-- Game Listings Cards -->
-<div class="row">
+<div class="row index-row">
   <% @games.each do |game| %>
-    <div class="col-md-4">    
+    <div class="col-md-3">    
       <div class="card games-index">
         <div class="card-img-top index-cover">
           <%= image_tag game.cover.thumb.url%>

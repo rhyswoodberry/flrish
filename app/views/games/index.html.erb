@@ -31,8 +31,8 @@
 <!-- Game Listings Cards -->
 <div class="row index-row">
   <% @games.each do |game| %>
-    <div class="col-xs-3 card-deck">    
-      <div class="card games-index">
+    <div class="col-xs-3 card-deck-m-1">    
+      <div class="card games-listing">
         <div class="card-img-top index-cover">
           <%= image_tag game.cover.thumb.url%>
         </div>

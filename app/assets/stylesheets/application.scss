@@ -169,9 +169,11 @@
 
 .upload-button {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 35px;
 }
+
 
 .games-listing {
   display: flex; 

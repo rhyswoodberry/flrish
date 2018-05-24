@@ -2,20 +2,23 @@
 
   <p id="notice"><%= notice %></p>
   
-  <p>
-    <%= image_tag @game.cover.large.url %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= @game.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @game.description %>
-  </p>
-
+  <div class="show-cover">
+    <p>
+      <%= image_tag @game.cover.large.url %>
+    </p>
+  </div>
+  <div class="show-title">
+    <p>
+      <strong>Title:</strong>
+      <%= @game.title %>
+    </p>
+  </div>
+  <div class="show-desc">
+    <p>
+      <strong>Description:</strong>
+      <%= @game.description %>
+    </p>
+  </div>
   <!-- Stripe payments -->
   <div class='stripe-button'>
     <% @amount = @game.price * 100 %>

@@ -1,4 +1,5 @@
-<div>
+<div class="show-wrapper">
+
   <p id="notice"><%= notice %></p>
   
   <p>
@@ -16,7 +17,7 @@
   </p>
 
   <!-- Stripe payments -->
-  <div class='stripe-payments'>
+  <div class='stripe-button'>
     <% @amount = @game.price * 100 %>
     <%= form_tag charges_path do %>
     
@@ -30,7 +31,6 @@
         <span><strong>Price: </strong>$<%= @game.price %></span>
       </label>
     </article>
-
     <!-- Ensures that users cannot buy their own games -->
     <% unless @game.user == current_user %>
       <!-- Ensures only logged in users can access the stripe pay button -->

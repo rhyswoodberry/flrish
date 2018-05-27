@@ -1,65 +1,67 @@
-<div class="show-wrapper">
+<div class="row">
+  <div class="col-m-6 show-game-desc">
 
-  <p id="notice"><%= notice %></p>
-  
-  <div class="show-cover">
-    <p>
-      <%= image_tag @game.cover.large.url %>
-    </p>
-  </div>
-  <div class="show-title">
-    <p>
-      <strong>Title:</strong>
-      <%= @game.title %>
-    </p>
-  </div>
-  <div class="show-desc">
-    <p>
-      <strong>Description:</strong>
-      <%= @game.description %>
-    </p>
-  </div>
+    <p id="notice"><%= notice %></p>
+    
+    <div class="show-cover">
+      <p>
+        <%= image_tag @game.cover.large.url %>
+      </p>
+    </div>
+    <div class="show-title">
+      <p>
+        <strong>Title:</strong>
+        <%= @game.title %>
+      </p>
+    </div>
+    <div class="show-desc">
+      <p>
+        <strong>Description:</strong>
+        <%= @game.description %>
+      </p>
+    </div>
 
-  <!-- Stripe payments -->
-  <div class='stripe-button'>
-    <% @amount = @game.price * 100 %>
-    <%= form_tag charges_path do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
-        </div>
-      <% end %>
-      <label class="price">
-        <span><strong>Price: </strong>$<%= @game.price %></span>
-      </label>
-    </article>
+    <!-- Stripe payments -->
+    <div class='stripe-button'>
+      <% @amount = @game.price * 100 %>
+      <%= form_tag charges_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <label class="price">
+          <span><strong>Price: </strong>$<%= @game.price %></span>
+        </label>
+      </article>
 
-    <!-- Ensures that users cannot buy their own games -->
-    <% unless @game.user == current_user %>
-      <!-- Ensures only logged in users can access the stripe pay button -->
-      <% if user_signed_in? %>
-        <!-- Stripe payment button -->
-        <%= hidden_field_tag "game_id", "#{@game.id}" %>
-        <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js',
-          class: 'stripe-button',
-          data: {
-          key: ENV["STRIPE_PUBLISHABLE_KEY"],
-          amount: @amount,
-          name: "flrish",
-          description: @game.title,
-          image: "https://github.com/rhyswoodberry/flrish/blob/master/read_me_images/flrish-logo.png?raw=true",
-          locale: "auto",
-          currency: "aud"} %>
+      <!-- Ensures that users cannot buy their own games -->
+      <% unless @game.user == current_user %>
+        <!-- Ensures only logged in users can access the stripe pay button -->
+        <% if user_signed_in? %>
+          <!-- Stripe payment button -->
+          <%= hidden_field_tag "game_id", "#{@game.id}" %>
+          <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js',
+            class: 'stripe-button',
+            data: {
+            key: ENV["STRIPE_PUBLISHABLE_KEY"],
+            amount: @amount,
+            name: "flrish",
+            description: @game.title,
+            image: "https://github.com/rhyswoodberry/flrish/blob/master/read_me_images/flrish-logo.png?raw=true",
+            locale: "auto",
+            currency: "aud"} %>
+          <% end %>
         <% end %>
       <% end %>
+    </div>
+
+    <!-- Only owners of games can edit games, this hides the button for non-sellers -->
+    <% if @game.user_id == current_user.try(:id)  %>
+    <%= link_to 'Edit', edit_game_path(@game) %> |
     <% end %>
+    <%= link_to 'Back', games_path %>
+
   </div>
-
-  <!-- Only owners of games can edit games, this hides the button for non-sellers -->
-  <% if @game.user_id == current_user.try(:id)  %>
-  <%= link_to 'Edit', edit_game_path(@game) %> |
-  <% end %>
-  <%= link_to 'Back', games_path %>
-
 </div>

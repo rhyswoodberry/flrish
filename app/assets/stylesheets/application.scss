@@ -267,6 +267,10 @@
 
 /* SHOW GAME */
 
+.show-row {
+  margin: 7rem;
+}
+
 .show-cover {
   display: flex;
   flex-wrap: wrap;
@@ -290,8 +294,13 @@
   margin-left: 2rem;
 }
 
-.show-row {
-  margin: 7rem;
+.show-user-buttons a {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.show-user-buttons a:hover {
+  color: #d11f66;
 }
 
 /* BODY */

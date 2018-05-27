@@ -2,61 +2,65 @@
 
 <div class="row show-row">
 
+  <!-- Game Cover Image -->
   <div class="col-m-4 show-cover">
     <p>
       <%= image_tag @game.cover.large.url %>
     </p>
   </div>
-  <div class="col-m-6 show-content">
+
+  <!-- All other Game Content -->
+  <div class="col-m-8 show-content">
     <div class="show-title">
       <h1>
         <%= @game.title %>
       </h1>
     </div>
+
+    <!--Display Price -->
+    <% @amount = @game.price * 100 %>
+    <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <div class="show-price">
+        <label>
+          <h4><strong>Price </strong>$<%= @game.price %></h4>
+        </label>
+      </div>
+    </article>
+
+    <!-- Game Description -->
     <div class="show-desc">
       <p>
-        <strong>Description:</strong>
+        <strong>About the game:</strong>
         <%= @game.description %>
       </p>
-    </div>
+    </div>  
 
-    <!-- Stripe payments -->
-    <div class='stripe-button'>
-      <% @amount = @game.price * 100 %>
-      <%= form_tag charges_path do %>
-      <article>
-        <% if flash[:error].present? %>
-          <div id="error_explanation">
-            <p><%= flash[:error] %></p>
-          </div>
-        <% end %>
-        <div class="show-price">
-          <label>
-            <span><strong>Price: </strong>$<%= @game.price %></span>
-          </label>
-        </div>
-      </article>
-
-      <!-- Ensures that users cannot buy their own games -->
-      <% unless @game.user == current_user %>
-        <!-- Ensures only logged in users can access the stripe pay button -->
-        <% if user_signed_in? %>
-          <!-- Stripe payment button -->
-          <%= hidden_field_tag "game_id", "#{@game.id}" %>
-          <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js',
-            class: 'stripe-button',
-            data: {
-            key: ENV["STRIPE_PUBLISHABLE_KEY"],
-            amount: @amount,
-            name: "flrish",
-            description: @game.title,
-            image: "https://github.com/rhyswoodberry/flrish/blob/master/read_me_images/flrish-logo.png?raw=true",
-            locale: "auto",
-            currency: "aud"} %>
-          <% end %>
+    <!-- Ensures that users cannot buy their own games -->
+    <% unless @game.user == current_user %>
+      <!-- Ensures only logged in users can access the stripe pay button -->
+      <% if user_signed_in? %>
+        <!-- Stripe payment button -->
+        <%= hidden_field_tag "game_id", "#{@game.id}" %>
+        <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js',
+          class: 'stripe-button',
+          data: {
+          key: ENV["STRIPE_PUBLISHABLE_KEY"],
+          amount: @amount,
+          name: "flrish",
+          description: @game.title,
+          image: "https://github.com/rhyswoodberry/flrish/blob/master/read_me_images/flrish-logo.png?raw=true",
+          locale: "auto",
+          currency: "aud"} %>
         <% end %>
       <% end %>
-    </div>
+    <% end %>
+    
 
     <!-- Only owners of games can edit games, this hides the button for non-sellers -->
     <div class="show-user-buttons">

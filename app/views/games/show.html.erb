@@ -10,7 +10,7 @@
   </div>
 
   <!-- All other Game Content -->
-  <div class="col-m-8 show-content">
+  <div class="col-m-6 show-content">
     <div class="show-title">
       <h1>
         <%= @game.title.upcase %>
@@ -28,7 +28,7 @@
       <% end %>
       <div class="show-price">
         <label>
-          <p><strong>Price </strong>$<%= @game.price %></p>
+          <p>PRICE <span class="show-price-no">$<%= @game.price %></span></p>
         </label>
       </div>
     </article>

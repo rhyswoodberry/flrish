@@ -279,10 +279,17 @@
   align-items: center;
 }
 
-.show-title {
+.show-title h1 {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 800;
   color: #d11f66;
+  font-size: 75px;
+}
+
+.show-price-no {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 25px;
 }
 
 .show-content {

@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+     <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
   <body>
+    <%= render 'shared/navbar' %>
     <%= yield %>
   </body>
+  <footer>
+    <div class='portfolio'> <a href='https://rhyswoodberry.github.io/'>Portfolio</a></div> |
+    <div class='copyright'> &copy; 2018 Rhys Brian Woodberry</div> |
+    <div class='ghub'> <a href='https://github.com/rhyswoodberry'>GitHub</a></div>
+  </footer>
 </html>

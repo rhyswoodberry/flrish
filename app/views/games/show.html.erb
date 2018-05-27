@@ -19,11 +19,11 @@
       <%= @game.description %>
     </p>
   </div>
+
   <!-- Stripe payments -->
   <div class='stripe-button'>
     <% @amount = @game.price * 100 %>
     <%= form_tag charges_path do %>
-    
     <article>
       <% if flash[:error].present? %>
         <div id="error_explanation">
@@ -34,6 +34,7 @@
         <span><strong>Price: </strong>$<%= @game.price %></span>
       </label>
     </article>
+
     <!-- Ensures that users cannot buy their own games -->
     <% unless @game.user == current_user %>
       <!-- Ensures only logged in users can access the stripe pay button -->
@@ -60,4 +61,5 @@
   <%= link_to 'Edit', edit_game_path(@game) %> |
   <% end %>
   <%= link_to 'Back', games_path %>
+
 </div>

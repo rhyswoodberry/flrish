@@ -2,14 +2,14 @@
 
 <div class='row index-row'>
   <div class='col-md-6 games-index-title'>
-    <h1>The Marketplace</h1>
+    <h1>Marketplace</h1>
   </div>
 </div>
 
 <div class="row index-row">
   <div class="col-md-6 upload-button">
       <% if can? :manage, Game %>
-        <%= link_to("Upload Game", new_game_path, class: "btn btn-secondary btn-lg new-game") %>
+        <%= link_to "Upload Game", new_game_path, class: "btn btn-secondary btn-lg new-game" %>
       <% end %>
   </div>
 </div>
@@ -38,7 +38,7 @@
         </div>
         <div class="card-body">
           <h4 class="card-title index-title">
-            <%= link_to game.title, game %>
+            <%= link_to game.title.upcase, game %>
           </h4>
           <div class="card-subtitle mb-2 index-price">
             <span class="index-price-label">Price:</span> <h6>$<%= game.price %></h6>

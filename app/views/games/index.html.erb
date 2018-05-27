@@ -41,7 +41,7 @@
             <%= link_to game.title.upcase, game %>
           </h4>
           <div class="card-subtitle mb-2 index-price">
-            <span class="index-price-label">Price:</span> <h6>$<%= game.price %></h6>
+            <span class="index-price-label">PRICE</span> <h6>$<%= game.price %></h6>
             <% if game.user_id == current_user.try(:id) %>
               <span class="card-edit"><%=link_to 'Edit', edit_game_path(game) %> | </span>
               <span class="card-destroy"><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></span>

@@ -1,17 +1,18 @@
-<div class="row">
+<p id="notice"><%= notice %></p>
+
+<div class="row show-row">
   <div class="col-m-6 show-game-desc">
 
-    <p id="notice"><%= notice %></p>
     
-    <div class="show-title">
-      <h1>
-        <%= @game.title %>
-      </h1>
-    </div>
     <div class="show-cover">
       <p>
         <%= image_tag @game.cover.large.url %>
       </p>
+    </div>
+    <div class="show-title">
+      <h1>
+        <%= @game.title %>
+      </h1>
     </div>
     <div class="show-desc">
       <p>

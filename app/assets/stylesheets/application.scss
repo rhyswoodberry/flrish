@@ -26,6 +26,7 @@
   text-align: center;
 }
 
+/* To fix nav and fotter taking up more pixels than the screen has */
 .row {
   margin: 0;
 }
@@ -272,6 +273,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.show-row {
+  margin: 7rem;
 }
 
 /* BODY */

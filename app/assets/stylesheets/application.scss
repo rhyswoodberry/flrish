@@ -101,7 +101,19 @@
 .welcome h1 {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 800;
-  font-size: 3.5rem;
+  font-size: 5rem;
+}
+
+@media screen and (max-width: 770px) {
+  .welcome h1 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .welcome h1 {
+    font-size: 3rem;
+  }
 }
 
 .home-logo {
@@ -113,6 +125,13 @@
 .home-logo img {
   width: 450px;
   height: 450px;
+}
+
+@media screen and (max-width: 500px) {
+  .home-logo img {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .welcome-message {
@@ -142,13 +161,6 @@
 
 .btn-secondary:hover {
   background-color: #312f2f;
-}
-
-@media screen and (max-width: 500px) {
-  .home-logo img {
-    width: 300px;
-    height: 300px;
-  }
 }
 
 /* GAMES INDEX */

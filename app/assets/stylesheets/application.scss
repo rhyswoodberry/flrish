@@ -283,7 +283,25 @@
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 800;
   color: #d11f66;
-  font-size: 75px;
+  font-size: 65px;
+}
+
+@media screen and (max-width: 1125px) {
+  .show-title h1 {
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 1125px) {
+  .show-title h1 {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .show-title h1 {
+    font-size: 35px;
+  }
 }
 
 .show-price-no {

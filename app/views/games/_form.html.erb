@@ -15,28 +15,28 @@
     
       <div class="field">
         <%= form.label :title %>
-        <%= form.text_field :title, class: "from-input" %>
+        <%= form.text_field :title, placeholder: "Title", class: "form-control" %>
       </div>
-
+      <br/>
       <div class="field">
         <%= form.label :description %>
-        <%= form.text_field :description, class: "from-input" %>
+        <%= form.text_area :description, :size => 500, placeholder: "Description", class: "form-control", rows: "4" %>
       </div>
-
+      <br/>
       <div class="field">
         <%= form.label :price %>
-        <%= form.text_field :price, class: "from-input" %>
+        <%= form.text_field :price, placeholder: "Price", class: "form-control" %>
       </div>
-
+      <br/>
       <div class="field">
         <%= form.label :cover %><br>
-        <%= form.file_field :cover, class: "from-input" %>
+        <%= form.file_field :cover, class: "form-control-file" %>
       </div>
-
+      <br/>
       <div class="actions">
         <%= form.submit "Add game", class: "btn btn-secondary btn-lg btn-block big-button" %>
       </div>
-
+      <br/>
       <%= render 'shared/errors', object: game %>
 
     <% end %>

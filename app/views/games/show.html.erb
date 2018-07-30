@@ -1,22 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<%# <div class="row show-row"> %>
+<div class="row">
+
   <!-- Game Cover Image -->
-  <div class="col-m-4 show-cover">
+  <div class="show-cover col-md-auto">
     <p>
       <%= image_tag @game.cover.large.url %>
     </p>
   </div>
 
-  <!-- All other Game Content -->
-  <div class="col-m-6 show-content">
+  <div class="show-content-right col-md-auto">
+    <!-- Title -->
     <div class="show-title">
       <h1>
         <%= @game.title.upcase %>
       </h1>
     </div>
 
-    <!--Display Price -->
+    <!-- Price -->
     <% @amount = @game.price * 100 %>
     <%= form_tag charges_path do %>
     <article>
@@ -32,41 +33,49 @@
       </div>
     </article>
 
-    <!-- Game Description -->
-    <div class="show-desc">
-      <p>
-        <%= @game.description %>
-      </p>
-    </div>  
-
+    <!-- Stripe payment button -->
     <!-- Ensures that users cannot buy their own games -->
-    <% unless @game.user == current_user %>
-      <!-- Ensures only logged in users can access the stripe pay button -->
-      <% if user_signed_in? %>
-        <!-- Stripe payment button -->
-        <%= hidden_field_tag "game_id", "#{@game.id}" %>
-        <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js',
-          class: 'stripe-button',
-          data: {
-          key: ENV["STRIPE_PUBLISHABLE_KEY"],
-          amount: @amount,
-          name: "flrish",
-          description: @game.title,
-          image: "https://github.com/rhyswoodberry/flrish/blob/master/read_me_images/flrish-logo.png?raw=true",
-          locale: "auto",
-          currency: "aud"} %>
+    <div class="stripe-button">
+      <% unless @game.user == current_user %>
+        <!-- Ensures only logged in users can access the stripe pay button -->
+        <% if user_signed_in? %>
+          <!-- Stripe payment button -->
+          <%= hidden_field_tag "game_id", "#{@game.id}" %>
+          <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js',
+            class: 'stripe-button',
+            data: {
+            key: ENV["STRIPE_PUBLISHABLE_KEY"],
+            amount: @amount,
+            name: "flrish",
+            description: @game.title,
+            image: "https://github.com/rhyswoodberry/flrish/blob/master/read_me_images/flrish-logo.png?raw=true",
+            locale: "auto",
+            currency: "aud"} %>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-    
-
+    </div>
+        
+    <!-- Edit and Back buttons -->
     <!-- Only owners of games can edit games, this hides the button for non-sellers -->
     <div class="show-user-buttons">
-      <% if @game.user_id == current_user.try(:id)  %>
-      <%= link_to 'Edit', edit_game_path(@game) %> |
-      <% end %>
-      <%= link_to 'Back', games_path %>
+      <span class="edit-button">
+        <% if @game.user_id == current_user.try(:id)  %>
+          <%= link_to 'Edit', edit_game_path(@game) %> |
+        <% end %>
+      </span>
+      <span class="back-button">
+        <%= link_to 'Back', games_path %>
+      </span>
     </div>
-
   </div>
-<%# </div> %>
+</div>
+
+<div class="row">
+  <!-- Description -->
+  <div class="show-desc col-md-12">
+    <p>
+      <%= @game.description %>
+    </p>
+  </div>  
+</div>

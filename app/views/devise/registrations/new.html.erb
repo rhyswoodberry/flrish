@@ -1,32 +1,35 @@
 <div class="all_views">  
-  <h2>Registration</h2>
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
+  <h2 class="register"> Registration </h2>
+  <p class="register-info">
+    Register with <i>flrish</i> today and start buying and selling great games! All you need is a valid email address and a password, all purchases are done through <i>Stripe</i> so there's no need to enter your payment details with us.
+  </p>
+  <div class="devise-form form-group">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
+        <br/>
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
+        <br/>
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+        </div>
+        <br/>
+        <div class="actions">
+          <%= f.submit "Sign up", class: "btn btn-secondary btn-lg btn-block browse-button" %>
+        </div>
+    <% end %>
+  </div>
+  <div class="login-link">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

@@ -1,8 +1,11 @@
 <div class="all-views">
-  <h1>Editing Game</h1>
+  <h1 class="form">Now Editing:</h1>
+  <h3 class="form edit-title"><%= @game.title %></h3>
 
   <%= render 'form', game: @game %>
 
-  <%= link_to 'Show', @game %> |
-  <%= link_to 'Back', games_path %>
+  <div class="form-link">
+    <%= link_to 'Show', @game %> |
+    <%= link_to 'Back', games_path %>
+  </div>
 </div>

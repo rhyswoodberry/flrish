@@ -1,18 +1,22 @@
-<div class="all-views">
-  <h2>Forgot your password?</h2>
-
-  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    <%= devise_error_messages! %>
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Send me reset password instructions" %>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
+<div class="all-views login">
+  <h2 class="form">Forgot your password?</h2>
+  <br/>
+  <br/>
+  <div class="flrish-form form-group">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control" %>
+      </div>
+      <br/>
+      <div class="actions">
+        <%= f.submit "Submit", class: "btn btn-secondary btn-lg btn-block big-button" %>
+      </div>
+    <% end %>
+    <br/>
+  </div>
+  <div class="form-link">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

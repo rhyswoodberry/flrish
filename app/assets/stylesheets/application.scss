@@ -290,15 +290,23 @@
 /* SHOW GAME */
 
 .show-row {
-  margin: 7rem;
+  margin: 3rem;
 }
 
 .show-cover {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+}
+
+.show-content-right {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 767px) {
+  .show-content-right {
+    align-items: center;
+  }
 }
 
 .show-title h1 {
@@ -362,6 +370,8 @@ body {
 /* FOOTER */
 
 footer {
+  position: absolute;
+  width: 100vw;
   display: flex;
   justify-content: center;
   text-align: center;

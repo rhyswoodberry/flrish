@@ -1,11 +1,12 @@
 <nav>
   <ul class="nav-container">
     <li class="logo"><%= link_to('flrish.', welcome_path) %></li>
+    <li class="nav_item"><%= link_to('Market', games_path)%></li>
     <% if user_signed_in? %>
-      <li class="nav_out"><%= link_to('Logout', destroy_user_session_path) %></li>
+      <li class="nav_item"><%= link_to('Logout', destroy_user_session_path) %></li>
     <% else %>
-      <li class="nav_up"><%= link_to('Register', new_user_registration_path) %></li>
-      <li class="nav_in"><%= link_to('Login', new_user_session_path)  %></li>
+      <li class="nav_item"><%= link_to('Register', new_user_registration_path) %></li>
+      <li class="nav_item"><%= link_to('Login', new_user_session_path)  %></li>
     <% end %>
   </ul>
 </nav>

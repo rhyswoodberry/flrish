@@ -142,7 +142,7 @@
   padding: 25px;
 }
 
-.browse-button {
+.big-button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -153,7 +153,7 @@
 
 /* LEARN HOW TO OVERRIDE BOOTSTRAP BUTTON HOVER/ACTIVE STYLE */
 
-.browse-button a {
+.big-button a {
     text-decoration: none;
     color: #f5f5f5;
     font-family: 'Nunito Sans', sans-serif;
@@ -362,16 +362,16 @@
   color: #d11f66;
 }
 
-/* Register */
+/* Forms */
 
-.register {
+.form {
   text-align: center;
   // font-family: 'Oleo Script', serif;
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
 }
 
-.register-info {
+.form-info {
   margin: 1rem 25rem;
   text-align: center;
   font-size: 1rem;
@@ -381,16 +381,16 @@
   margin: 0.5rem 25rem;
 }
 
-.login-link {
+.form-link {
   margin-left: 25rem;
 }
 
-.login-link a {
+.form-link a {
   color: #f5f5f5;
   text-decoration: none;
 }
 
-.login-link a:hover {
+.form-link a:hover {
   color: #d11f66;
 }
 
@@ -399,7 +399,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .register-info {
+  .form-info {
     margin: 1rem 15rem;
   }
 
@@ -407,19 +407,19 @@
     margin: 0.5rem 15rem;
   }
 
-  .login-link {
+  .form-link {
     margin: 0rem 15rem;
   }
 }
 
 
 @media screen and (max-width: 800px) {
-  .register {
+  .form {
     font-size: 2.5rem;
     margin-bottom: 0.7rem;
   }
 
-  .register-info {
+  .form-info {
     margin: 0rem 5rem;
     font-size: 0.95rem;
   }
@@ -428,7 +428,7 @@
     margin: 0.5rem 5rem;
   }
 
-  .login-link {
+  .form-link {
     margin: 0rem 5rem;
   }
 }

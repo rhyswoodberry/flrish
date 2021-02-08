@@ -33,7 +33,7 @@ gem 'devise'
 # ENV
 gem "figaro"
 # Image Uploads
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 # File validators
 gem 'file_validators'
 # Image Manipulations
